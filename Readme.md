@@ -6,23 +6,35 @@ for the adaptation and modification of certain aspects of code.
 
 
 # Extended BNF
-Program = Statements  return
-Statements = Statement (; Statement)*  return
-Statement = If | While | Assignment  | Read | Write  return
+Program = Statements
 
-If = if Comparison then Statements \[else Statements] end  return
-While = while Comparison do Statements end  return
-Assignment = identifier := Expression  return
-Read =  read identifier  return
+Statements = Statement (; Statement)*
 
-Write = write Expression  return
+Statement = If | While | Assignment  | Read | Write
 
-Comparison = Expression Relation Expression  return
-Relation = = | != | < | <= | > | >=  return
 
-Expression = Term ((+ | -) Term)*  return
-Term = Factor ((* | /) Factor)*  return
-Factor = (Expression) | number | identifier  return
+If = if Comparison then Statements \[else Statements] end
+
+While = while Comparison do Statements end
+
+Assignment = identifier := Expression
+
+
+Read =  read identifier
+
+Write = write Expression
+
+
+Comparison = Expression Relation Expression
+
+Relation = = | != | < | <= | > | >=
+
+
+Expression = Term ((+ | -) Term)*
+
+Term = Factor ((* | /) Factor)*
+
+Factor = (Expression) | number | identifier
 
 
 
